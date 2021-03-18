@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+}
+#page_heading{
+    text-align: center;
+    color: gray;
+    margin-top: 25px;
+}
+#contact_info{
+    list-style-type: none;
+    max-width: 400px;
+    position: absolute;
+    left: 31%;
+    overflow-y: scroll;
+}
+#contact_info li{
+    background-color: cadetblue;
+    margin-bottom: 2px;
+    color: honeydew;
+    display: flex;
+}
+#contact_info li:hover{
+    background-color:crimson;
+}
+#contact_info p{
+    display: inline-block;
+    /* margin-right: 150px; */
+    min-width: 120px;
+    max-width: 120px;    
+}
+#para_phone{
+    margin-left: 130px;
+    /* text-align: end; */
+}
+form{
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    margin-top: 7%!important;
+}
+form input{
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 200px;
+    padding: 5px;
+}
+#btn_add{
+    border: none;
+    background-color: gray;
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+}
+.delete_buton{
+    display: flex;
+    width: 10%;
+    text-align: center;
+    margin-top: 5px;
+}
+.delete_buton a i{
+    color: white;
+    background-color: red;
+    text-align: center;
+    margin-left: -4px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=locals.title%></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <link rel="stylesheet" href="/css/home.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1 id="page_heading">
+        <i class="fas fa-address-book"></i>
+        Contacts List!
+    </h1>
+    <div>
+        <ul id="contact_info" style="overflow-y: scroll; max-height: 250px;">
+            <% for(let i of contact_list){ %>
+                <li>
+                    <p>
+                        <%=i.name%>
+                    </p>
+                    <p id="para_phone">
+                        <%=i.phone%>
+                    </p>
+            <div class="delete_buton">
+                <!-- below anchor will send the value to the route. -->
+                <!-- //1. using string params by default get request is made by <a> -->
+                <!-- <a href="/delete-contact/<%=i.phone%>">
+                    <i class="fas fa-window-close"></i>
+                </a> -->
+                <!-- 2. using query params, URLS this way = user friendly, handle spaces automatically   -->
+                <!-- <a href="/delete-contact/?phone=<%=i.phone%>&name=<%=i.name%>">
+                    <i class="fas fa-window-close"></i>
+                </a> -->
+                <!-- 3. Delete from DB using unique ID. -->
+                <a href="/delete-contact/?id=<%=i.id%>">
+                    <i class="fas fa-window-close"></i>
+                </a>
+            </div>
+        </li>
+            <%}%>
+        </ul>
+    </div>
+    <!-- Sending data to the server using form -->
+    <form id="Contact_form" action="/create_contact" method="POST">
+        <input type="text" name="name" placeholder="Enter your Name here!" required>
+        <input type="text" name="phone" placeholder="Enter Phone here!">
+        <button type="submit" id="btn_add" onclick="addContacts()">Add Contact</button>
+    </form>
+    <script src="./js/home.js" type="text/javascript"></script>
+</body>
+</html>
